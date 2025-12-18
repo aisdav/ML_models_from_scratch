@@ -81,6 +81,7 @@ Why do we use this particular sigmoid function? Its the most suitable function b
 2) Compatible with Maximum Likelihood Estimation
 3) Gives a convex loss function
 4) Gives a convex loss function
+
 What is the convexity of a function?
 Function is convex when it has 1 the lowest point,if we go down, we definitely reach minimum, there is false(local) minimums
 ## Summary
