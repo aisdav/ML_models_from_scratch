@@ -2,54 +2,43 @@
 
 ## Model definition
 
-Logistic Regression is a linear binary classifier that models the probability of class membership using the sigmoid function.
+Logistic Regression is a linear binary classifier that estimates the probability of class membership using the sigmoid function.
 
-Given input features \( x \in \mathbb{R}^d \), the model computes:
+Given input features X with d dimensions, the model computes:
 
-\[
 z = w^T x + b
-\]
 
-\[
-\hat{y} = \sigma(z) = \frac{1}{1 + e^{-z}}
-\]
+y_hat = sigmoid(z) = 1 / (1 + exp(-z))
 
 where:
-- \( w \) — weight vector
-- \( b \) — bias
-- \( \sigma(\cdot) \) — sigmoid function
+- w — weight vector (d,)
+- b — bias (scalar)
+- sigmoid(z) maps real values to (0, 1)
 
 ---
 
 ## Probabilistic interpretation
 
-The model estimates probabilities:
+The model predicts probabilities:
 
-\[
-P(y=1 \mid x) = \hat{y}
-\]
+P(y = 1 | x) = y_hat  
+P(y = 0 | x) = 1 - y_hat
 
-\[
-P(y=0 \mid x) = 1 - \hat{y}
-\]
+Each prediction represents model confidence.
 
 ---
 
 ## Maximum Likelihood Estimation (MLE)
 
-Assuming samples are independent, the likelihood function is:
+Assuming independent samples, the likelihood of observing the dataset is:
 
-\[
-L(w, b) = \prod_{i=1}^{n} \hat{y}_i^{y_i}(1 - \hat{y}_i)^{1 - y_i}
-\]
+L(w, b) = product over i of:
+    y_hat_i ^ y_i * (1 - y_hat_i) ^ (1 - y_i)
 
-To simplify optimization, we maximize the log-likelihood:
+To avoid numerical underflow and simplify optimization, we maximize the log-likelihood:
 
-\[
-\log L(w, b) = \sum_{i=1}^{n} \left[
-y_i \log \hat{y}_i + (1 - y_i) \log (1 - \hat{y}_i)
-\right]
-\]
+log L(w, b) = sum over i of:
+    y_i * log(y_hat_i) + (1 - y_i) * log(1 - y_hat_i)
 
 ---
 
@@ -57,33 +46,39 @@ y_i \log \hat{y}_i + (1 - y_i) \log (1 - \hat{y}_i)
 
 Minimizing the negative log-likelihood leads to the logistic loss:
 
-\[
-J(w, b) = -\frac{1}{n} \sum_{i=1}^{n}
-\left[
-y_i \log \hat{y}_i + (1 - y_i) \log (1 - \hat{y}_i)
-\right]
-\]
+J(w, b) = -(1 / n) * sum over i of:
+    y_i * log(y_hat_i) +
+    (1 - y_i) * log(1 - y_hat_i)
 
-This loss penalizes confident but incorrect predictions.
+This loss heavily penalizes confident but incorrect predictions.
 
 ---
 
 ## Optimization
 
-There is no closed-form solution for logistic regression, so parameters are optimized using gradient descent.
+Logistic Regression has no closed-form solution.
+
+Model parameters are optimized using gradient descent:
+
+w = w - learning_rate * dw  
+b = b - learning_rate * db
 
 ---
 
 ## Gradients
 
-Gradient of the loss with respect to the parameters:
+The gradients of the loss function are:
 
-\[
-\frac{\partial J}{\partial w} = \frac{1}{n} X^T(\hat{y} - y)
-\]
+dw = (1 / n) * X^T (y_hat - y)  
+db = (1 / n) * sum(y_hat - y)
 
-\[
-\frac{\partial J}{\partial b} = \frac{1}{n} \sum_{i=1}^{n} (\hat{y}_i - y_i)
-\]
+These gradients are used to iteratively update the model parameters.
 
-These gradients are used to update parameters during training.
+---
+
+## Summary
+
+- Logistic Regression is a linear model with a probabilistic output
+- Training is based on Maximum Likelihood Estimation
+- Binary Cross-Entropy loss comes directly from MLE
+- Optimization is performed using gradient descent
