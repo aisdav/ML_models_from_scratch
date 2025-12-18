@@ -40,6 +40,7 @@ w = (X^T X)^{-1} X^T y
 ---
 
 ### 2.2 Gradient Descent
+Gradient is vector that shows direction of the stepeest increase and how fast is this increase happening. Moving opposite to the gradient we decrease our loss function
 Gradient Descent is an **iterative optimization method** that gradually minimizes the loss function by updating weights and bias in the opposite direction of the gradient:  
 
 \[
