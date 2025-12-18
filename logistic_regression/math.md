@@ -75,7 +75,14 @@ db = (1 / n) * sum(y_hat - y)
 These gradients are used to iteratively update the model parameters.
 
 ---
-
+## Answers to my questions
+Why do we use this particular sigmoid function? Its the most suitable function because:
+1) it converts linear combination to probability
+2) Compatible with Maximum Likelihood Estimation
+3) Gives a convex loss function
+4) Gives a convex loss function
+What is the convexity of a function?
+Function is convex when it has 1 the lowest point,if we go down, we definitely reach minimum, there is false(local) minimums
 ## Summary
 
 - Logistic Regression is a linear model with a probabilistic output
