@@ -8,7 +8,7 @@ The goal of this project is **deep understanding**, not performance or library u
 
 ## 🎯 Motivation
 
-Many ML practitioners rely heavily on high-level libraries without fully understanding:
+Many ML practitioners rely heavily on high-level libraries without fully understanding(including me):
 
 * how optimization works
 * what model parameters actually control
@@ -20,6 +20,7 @@ This repository was created to:
 * build intuition behind training and inference
 * strengthen algorithmic thinking for real-world ML problems and competitions
 
+So I decided to strengthen my ML base by creating ML models from scratch. 
 ---
 
 ## 🛠️ Implemented Algorithms
