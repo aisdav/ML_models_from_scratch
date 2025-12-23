@@ -1,22 +1,71 @@
 # Naive Bayes Classifier
 
-## Naive Bayes Classifier 
-It is probabilistic classifier based on Bayes formula with a strict assumption that all the features are independent among themselfes. So we work with one-dimensional probability densities, 
-instead of many-dimensional when features depend on each other. Bayes formula P(A|B) =P(B|A)*P(A)/P(B) where
-P(A|B) - aposterior probability of event A on condition event B is happened
-P(B|A) - Conditional probability of B on condition event A is happened
-P(A),P(B) - aprior probabilities of A and B
-In context of Machine learning it looks:
-P(yk|X) = P(yk)P(X|yk)/P(X)
-where
+## Description
 
-P(yk|X) - aposterior probability of the sample belongs to the yk class taking into account its features X;
-P(X|yk) - likelihood, that is, the probability of features X for a given class yk;
-P(yk) is the a priori probability that a randomly selected observation belongs to the yk class.;
-P(X) is the a priori probability of features of X.
+Naive Bayes is a probabilistic classifier based on Bayes' theorem with a strong assumption that all features are conditionally independent given the class.  
+Due to this assumption, we work with one-dimensional probability density functions instead of a full joint multidimensional distribution.
 
-In common view it looks:
-P(yk|X1,X2,X3,X4.....) = P(yk)Product(from i=1 to n)P(Xi|yk)/P(X1,X2,X3,X4.....)
-the denominator always same and its doesnt depends on class, so final formula looks:
-yk = argmax P(yk) Product(from i=1 to n)P(Xi|yk)
-There is also a number of versions of realisation differing assumptions about the distribution of features for a given class. They are Gaussian Naive Bayes, Multinomial Naive Bayes, Complement Naive Bayes, Bernoulli Naive Classifier, Categorical
+Bayes' theorem is defined as:
+
+P(A | B) = P(B | A) · P(A) / P(B)
+
+where:
+- P(A | B) is the **posterior probability** of event A given that event B has occurred
+- P(B | A) is the **likelihood**
+- P(A) and P(B) are **prior probabilities**
+
+---
+
+## Bayes Theorem in Machine Learning
+
+In the context of machine learning, Bayes' theorem is written as:
+
+P(yₖ | X) = P(yₖ) · P(X | yₖ) / P(X)
+
+where:
+- P(yₖ | X) is the **posterior probability** that a sample with features X belongs to class yₖ
+- P(X | yₖ) is the **likelihood**, i.e. the probability of observing features X given class yₖ
+- P(yₖ) is the **prior probability** of class yₖ
+- P(X) is the marginal probability of observing features X
+
+---
+
+## Naive Independence Assumption
+
+Naive Bayes assumes that all features are conditionally independent given the class:
+
+P(X | yₖ) = ∏ᵢ P(xᵢ | yₖ)
+
+Therefore, the posterior probability can be written as:
+
+P(yₖ | X) ∝ P(yₖ) · ∏ᵢ P(xᵢ | yₖ)
+
+The denominator P(X) is the same for all classes and does not affect class comparison, so it is omitted.
+
+The final prediction rule is:
+
+ŷ = argmaxₖ P(yₖ) · ∏ᵢ P(xᵢ | yₖ)
+
+---
+
+## Types of Naive Bayes Classifiers
+
+Different variants of Naive Bayes exist depending on the assumed distribution of features:
+
+- Gaussian Naive Bayes
+- Multinomial Naive Bayes
+- Bernoulli Naive Bayes
+- Complement Naive Bayes
+- Categorical Naive Bayes
+
+In this project, we focus on **Gaussian Naive Bayes**, which assumes that each feature follows a normal distribution.
+
+---
+
+## Principle of Work (Gaussian Naive Bayes)
+
+1. Compute the **prior probabilities** of each class.
+2. For each class and each feature, compute the **mean** and **standard deviation**.
+3. For a test sample, compute the **probability density** of each feature using the Gaussian distribution.
+4. Compute the **posterior probability** for each class as the product of the prior probability and feature likelihoods.
+5. Select the class with the **maximum posterior probability** as the final prediction.
