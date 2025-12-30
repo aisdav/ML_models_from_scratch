@@ -74,3 +74,5 @@ In this project, we focus on **Gaussian Naive Bayes**, which assumes that each f
 **Prior probability:** The probability of an event before observing any new data.  
 
 **Posterior probability:** The probability of an event updated based on new evidence or data.
+
+**Likelihood:** A function of the parameters of a statistical model given observed data, measuring how probable the observed data is for different parameter values.
