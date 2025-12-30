@@ -18,10 +18,10 @@ The goal of linear regression is to find the optimal weights and bias that **min
 \[
 \text{MSE} = \frac{1}{m} \sum_{i=1}^{m} (y_i - \hat{y}_i)^2
 \]  
-- **Mean Absolute Error (MAE)**:  
-$$
-\text{MAE} = \frac{1}{m} \sum_{i=1}^{m} |y_i - \hat{y}_i|
-$$ 
+- ### Mean Absolute Error (MAE)
+
+![MAE](https://latex.codecogs.com/svg.image?\text{MAE}=\frac{1}{m}\sum_{i=1}^{m}|y_i-\hat{y}_i|)
+
 
 ---
 
