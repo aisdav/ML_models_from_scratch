@@ -6,9 +6,10 @@ Logistic Regression is a linear binary classifier that estimates the probability
 
 Given input features X with d dimensions, the model computes:
 
-z = w^T x + b
+![Linear combination](https://latex.codecogs.com/svg.image?\color{white}z%20%3D%20w%5ET%20x%20%2B%20b)
 
-y_hat = sigmoid(z) = 1 / (1 + exp(-z))
+![Sigmoid function](https://latex.codecogs.com/svg.image?\color{white}\hat{y}%20%3D%20\text{sigmoid}(z)%20%3D%20\frac{1}{1%20%2B%20e^{-z}})
+
 
 where:
 - w — weight vector (d,)
@@ -21,8 +22,9 @@ where:
 
 The model predicts probabilities:
 
-P(y = 1 | x) = y_hat  
-P(y = 0 | x) = 1 - y_hat
+![Probability y=1](https://latex.codecogs.com/svg.image?\color{white}P(y%20%3D%201%20%7C%20x)%20%3D%20\hat{y})
+
+![Probability y=0](https://latex.codecogs.com/svg.image?\color{white}P(y%20%3D%200%20%7C%20x)%20%3D%201%20-%20\hat{y})
 
 Each prediction represents model confidence.
 
@@ -33,12 +35,12 @@ Each prediction represents model confidence.
 Assuming independent samples, the likelihood of observing the dataset is:
 
 L(w, b) = product over i of:
-    y_hat_i ^ y_i * (1 - y_hat_i) ^ (1 - y_i)
+    ![Likelihood term](https://latex.codecogs.com/svg.image?\color{white}\hat{y}_i^{y_i}%20\cdot%20(1%20-%20\hat{y}_i)^{(1-y_i)})
 
 To avoid numerical underflow and simplify optimization, we maximize the log-likelihood:
 
 log L(w, b) = sum over i of:
-    y_i * log(y_hat_i) + (1 - y_i) * log(1 - y_hat_i)
+    ![Log-likelihood term](https://latex.codecogs.com/svg.image?\color{white}y_i%20\cdot%20\log(\hat{y}_i)%20+%20(1-y_i)%20\cdot%20\log(1-\hat{y}_i))
 
 ---
 
@@ -47,8 +49,8 @@ log L(w, b) = sum over i of:
 Minimizing the negative log-likelihood leads to the logistic loss:
 
 J(w, b) = -(1 / n) * sum over i of:
-    y_i * log(y_hat_i) +
-    (1 - y_i) * log(1 - y_hat_i)
+    ![Log-likelihood](https://latex.codecogs.com/svg.image?\color{white}y_i%20\cdot%20\log(\hat{y}_i)%20+%20(1-y_i)%20\cdot%20\log(1-\hat{y}_i))
+
 
 This loss heavily penalizes confident but incorrect predictions.
 
