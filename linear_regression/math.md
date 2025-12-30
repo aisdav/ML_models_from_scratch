@@ -57,10 +57,8 @@ where:
 2. **Compute predictions**: \(\hat{y} = X \cdot w + b\)  
 3. **Compute gradients** of the loss with respect to weights and bias.  
 4. **Update weights and bias**:  
-\[
-w := w - \alpha \frac{\partial J}{\partial w}, \quad
-b := b - \alpha \frac{\partial J}{\partial b}
-\]  
+![Gradient Descent Assignment](https://latex.codecogs.com/svg.image?\color{white}w%20:=%20w%20-%20%5Calpha%20%5Cfrac%7B%5Cpartial%20J%7D%7B%5Cpartial%20w%7D%2C%20%5Cquad%20b%20:=%20b%20-%20%5Calpha%20%5Cfrac%7B%5Cpartial%20J%7D%7B%5Cpartial%20b%7D)
+ 
 5. **Repeat steps 2–4** until convergence (gradients are below a predefined threshold or maximum iterations reached).  
 6. **Final prediction** is obtained using the learned weights and bias.  
 
