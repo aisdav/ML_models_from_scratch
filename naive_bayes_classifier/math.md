@@ -69,3 +69,8 @@ In this project, we focus on **Gaussian Naive Bayes**, which assumes that each f
 3. For a test sample, compute the **probability density** of each feature using the Gaussian distribution.
 4. Compute the **posterior probability** for each class as the product of the prior probability and feature likelihoods.
 5. Select the class with the **maximum posterior probability** as the final prediction.
+
+## Some definitions
+**Prior probability:** The probability of an event before observing any new data.  
+
+**Posterior probability:** The probability of an event updated based on new evidence or data.
