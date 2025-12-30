@@ -20,7 +20,7 @@ The goal of linear regression is to find the optimal weights and bias that **min
 \]  
 - **Mean Absolute Error (MAE)**
 
-&nbsp;&nbsp;&nbsp;&nbsp;![MAE](https://latex.codecogs.com/svg.image?\color{white}\text{MAE}=\frac{1}{m}\sum_{i=1}^{m}|y_i-\hat{y}_i|)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![MAE](https://latex.codecogs.com/svg.image?\color{white}\text{MAE}=\frac{1}{m}\sum_{i=1}^{m}|y_i-\hat{y}_i|)
 
 
 ---
