@@ -4,7 +4,7 @@
 Linear Regression is one of the fundamental algorithms in machine learning.  
 It models the relationship between a target variable **y** and input features **X** using a linear function:  
 
-![Linear model](https://latex.codecogs.com/svg.image?\color{white}\hat{y} = X \cdot w + b)
+![Linear model](https://latex.codecogs.com/svg.image?%5Chat%7By%7D%20%3D%20X%20%5Ccdot%20w%20%2B%20b)
 
 
 where:  
@@ -28,7 +28,8 @@ The goal of linear regression is to find the optimal weights and bias that **min
 ### 2.1 Normal Equation
 The weights can be computed **analytically** using the Normal Equation:  
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![OLS solution](https://latex.codecogs.com/svg.image?\color{white}w = (X^T X)^{-1} X^T y)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![OLS solution](https://latex.codecogs.com/svg.image?\color{white}w%20%3D%20(X%5ET%20X)%5E%7B-1%7D%20X%5ET%20y)
+
 
 
 **Pros:** exact solution, no iterations required.  
@@ -40,10 +41,8 @@ The weights can be computed **analytically** using the Normal Equation:
 Gradient is vector that shows direction of the stepeest increase and how fast is this increase happening. Moving opposite to the gradient we decrease our loss function
 Gradient Descent is an **iterative optimization method** that gradually minimizes the loss function by updating weights and bias in the opposite direction of the gradient:  
 
-\[
-w^{(t)} = w^{(t-1)} - \alpha \frac{\partial J}{\partial w}, \quad
-b^{(t)} = b^{(t-1)} - \alpha \frac{\partial J}{\partial b}
-\]
+![Gradient Descent](https://latex.codecogs.com/svg.image?\color{white}w%5E%7B(t)%7D%20%3D%20w%5E%7B(t-1)%7D%20-%20%5Calpha%20%5Cfrac%7B%5Cpartial%20J%7D%7B%5Cpartial%20w%7D%2C%20%5Cquad%20b%5E%7B(t)%7D%20%3D%20b%5E%7B(t-1)%7D%20-%20%5Calpha%20%5Cfrac%7B%5Cpartial%20J%7D%7B%5Cpartial%20b%7D)
+
 
 where:  
 - \(J\) — loss function (e.g., MSE)  
