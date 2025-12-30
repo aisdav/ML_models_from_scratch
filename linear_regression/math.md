@@ -4,9 +4,8 @@
 Linear Regression is one of the fundamental algorithms in machine learning.  
 It models the relationship between a target variable **y** and input features **X** using a linear function:  
 
-\[
-\hat{y} = X \cdot w + b
-\]
+![Linear model](https://latex.codecogs.com/svg.image?\color{white}\hat{y} = X \cdot w + b)
+
 
 where:  
 - **w** — vector of weights (coefficients),  
@@ -14,13 +13,12 @@ where:
 - **b** — bias term.  
 
 The goal of linear regression is to find the optimal weights and bias that **minimize a loss function**, typically:  
-- **Mean Squared Error (MSE)**:  
-\[
-\text{MSE} = \frac{1}{m} \sum_{i=1}^{m} (y_i - \hat{y}_i)^2
-\]  
+- **Mean Squared Error (MSE)**:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![MSE](https://latex.codecogs.com/svg.image?\color{white}\text{MSE}=\frac{1}{m}\sum_{i=1}^{m}(y_i-\hat{y}_i)^2) 
 - **Mean Absolute Error (MAE)**
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![MAE](https://latex.codecogs.com/svg.image?\color{white}\text{MAE}=\frac{1}{m}\sum_{i=1}^{m}|y_i-\hat{y}_i|)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![MAE](https://latex.codecogs.com/svg.image?\color{white}\text{MAE}=\frac{1}{m}\sum_{i=1}^{m}|y_i-\hat{y}_i|)
 
 
 ---
@@ -30,9 +28,8 @@ The goal of linear regression is to find the optimal weights and bias that **min
 ### 2.1 Normal Equation
 The weights can be computed **analytically** using the Normal Equation:  
 
-\[
-w = (X^T X)^{-1} X^T y
-\]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![OLS solution](https://latex.codecogs.com/svg.image?\color{white}w = (X^T X)^{-1} X^T y)
+
 
 **Pros:** exact solution, no iterations required.  
 **Cons:** computationally expensive for large datasets because of matrix inversion.  
