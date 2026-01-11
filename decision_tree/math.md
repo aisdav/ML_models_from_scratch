@@ -10,7 +10,9 @@ Each terminal node corresponds to a rectangular region in the feature space on t
 
 Choosing the Best Partition
 
-Choosing the best partition when creating a decision node resembles a game where you can ask only Yes/No questions to guess a celebrity. It is logical to choose questions that eliminate the largest number of incorrect answers. For example, a question about sex may eliminate about 50 percent of candidates (assuming a balanced distribution), while a question about age is usually less informative.
+Choosing the best partition when creating a decision node resembles a game where you can ask only Yes/No questions to guess a celebrity. It is logical to choose questions that eliminate the largest number of incorrect answers.
+
+For example, a question about sex may eliminate about 50 percent of candidates (assuming a balanced distribution), while a question about age is usually less informative.
 
 A measure that indicates how well a question at a node separates correct answers from incorrect ones is called a node impurity (contamination) measure.
 
@@ -18,11 +20,11 @@ In the case of classification, the following criteria are used to assess the qua
 
 Gini impurity measures the diversity of the class probability distribution in a node. If all samples in a node belong to the same class, the Gini impurity is 0. For a binary classification problem with a uniform class distribution, the Gini impurity reaches its maximum value of 0.5.
 
-G = 1 − sum_{i=1}^{K} p_i^2
+![Gini impurity](https://latex.codecogs.com/svg.image?\color{white}G%20=%201%20-%20\sum_{i=1}^{K}p_i^2)
 
 Shannon entropy measures the uncertainty or disorder of classes in a node. It represents the amount of information required to describe the system state: the higher the entropy, the higher the disorder.
 
-H = − sum_{i=1}^{K} p_i log p_i
+![Shannon entropy](https://latex.codecogs.com/svg.image?\color{white}H%20=%20-%20\sum_{i=1}^{K}p_i%20\log%20p_i)
 
 Here, p_i is the proportion of samples belonging to class i in the node.
 
@@ -37,14 +39,22 @@ The training data is then split into two subsets. Samples with feature values le
 For each subset, impurity is calculated using the selected criterion. The weighted sum of impurities represents the loss function associated with that threshold. The threshold that produces the minimum loss value on the training set (or current node subset) is selected as the best split.
 
 Regression loss:
-L_reg = (1 / m) * sum_{i=1}^{m} (y_i − y_hat)^2
+
+![CART regression loss](https://latex.codecogs.com/svg.image?\color{white}L_{reg}%20=%20\frac{1}{m}\sum_{i=1}^{m}(y_i-\hat{y})^2)
 
 Classification impurity (Gini):
-L_cls = 1 − sum_{k=1}^{K} p_k^2
+
+![CART classification loss Gini](https://latex.codecogs.com/svg.image?\color{white}L_{cls}%20=%201-%5Csum_{k=1}^{K}p_k^2)
+
+Classification impurity (Entropy):
+
+![CART classification loss entropy](https://latex.codecogs.com/svg.image?\color{white}L_{cls}%20=%20-%5Csum_{k=1}^{K}p_k%20\log%20p_k)
 
 Principle of Work
 
-First, the root node is created using the best threshold. Then the training data is split into two subsets: smaller values go to the left, and larger values go to the right. This process is applied recursively to all subsets until one of the stopping criteria is met: maximum depth, maximum number of leaf nodes, minimum number of samples in a node, or no further impurity reduction.
+1. Create the root node using the best threshold.
+2. Split the training data into two subsets: smaller values go to the left, and larger values go to the right.
+3. Recursively repeat this process for all subsets until one of the stopping criteria is met: maximum depth, maximum number of leaf nodes, minimum number of samples in a node, or no further impurity reduction.
 
 Regularization of Decision Trees
 
