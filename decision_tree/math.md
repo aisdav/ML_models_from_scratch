@@ -1,14 +1,14 @@
-Decision Tree (CART)
+# Decision Tree (CART)
 
 A decision tree is a model for classification and regression based on a binary tree structure. It is a fundamental component of gradient boosting and random forest algorithms and one of the most powerful tools in machine learning.
 
-Structure of a Decision Tree
+## Structure of a Decision Tree
 
 A decision tree consists of a root node, branches (left and right), decision nodes, and terminal (leaf) nodes. Root and decision nodes represent questions with a threshold used to split the training data into parts. Leaf nodes represent the final prediction: the mean value of samples in the leaf for regression and the statistical mode (most frequent class) for classification.
 
 Each terminal node corresponds to a rectangular region in the feature space on the decision boundary plot. If several adjacent regions produce the same prediction, they are automatically merged.
 
-Choosing the Best Partition
+## Choosing the Best Partition
 
 Choosing the best partition when creating a decision node resembles a game where you can ask only Yes/No questions to guess a celebrity. It is logical to choose questions that eliminate the largest number of incorrect answers.
 
@@ -30,7 +30,7 @@ Here, p_i is the proportion of samples belonging to class i in the node.
 
 In the case of regression, the mean squared error (MSE) is most commonly used to evaluate the quality of node partitioning, but Friedman MSE and MAE can also be applied.
 
-Loss Function
+## Loss Function
 
 After choosing a quality criterion, all unique feature values are sorted, and candidate thresholds are computed as the midpoints between adjacent values.
 
@@ -50,13 +50,13 @@ Classification impurity (Entropy):
 
 ![CART classification loss entropy](https://latex.codecogs.com/svg.image?\color{white}L_{cls}%20=%20-%5Csum_{k=1}^{K}p_k%20\log%20p_k)
 
-Principle of Work
+## Principle of Work
 
 1. Create the root node using the best threshold.
 2. Split the training data into two subsets: smaller values go to the left, and larger values go to the right.
 3. Recursively repeat this process for all subsets until one of the stopping criteria is met: maximum depth, maximum number of leaf nodes, minimum number of samples in a node, or no further impurity reduction.
 
-Regularization of Decision Trees
+## Regularization of Decision Trees
 
 There are two main regularization approaches: pre-pruning, which limits tree growth during construction, and post-pruning, which simplifies the tree after it has been fully built. Post-pruning is generally more effective because it allows the full tree structure to form and then removes unnecessary branches more precisely.
 
