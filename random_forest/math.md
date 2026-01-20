@@ -39,9 +39,7 @@ When bagging with replacement (`bootstrap=True`) is used, each bootstrap sample 
 
 This result follows from the limit:
 
-\[
-\lim_{m \to \infty} \left(1 - \frac{1}{m}\right)^m = \frac{1}{e} \approx 0.37
-\]
+![Limit to 1/e](https://latex.codecogs.com/svg.image?\color{white}\lim_{m%20\to%20\infty}(1-\frac{1}{m})^{m}%20=%20\frac{1}{e}%20\approx%200.37)
 
 OOB samples can be used as a validation set to estimate the generalization performance of the ensemble without requiring a separate test set.
 
@@ -67,29 +65,25 @@ Random Forest is a specialized and optimized form of bagging based on decision t
 
 For regression:
 
-\[
-\hat{f}_{rf}^{B}(x) = \frac{1}{B} \sum_{b=1}^{B} T_b(x)
-\]
+![Random Forest prediction](https://latex.codecogs.com/svg.image?\color{white}\hat{f}_{rf}^{B}(x)%20=%20\frac{1}{B}%20%5Csum_{b=1}^{B}T_b(x)
 
 For classification:
 
-\[
-\hat{C}_{rf}^{B}(x) = \text{majority vote}\left( \{ \hat{C}_b(x) \}_{b=1}^{B} \right)
-\]
+![Random Forest classification](https://latex.codecogs.com/svg.image?\color{white}\hat{C}_{rf}^{B}(x)%20=%20\text{majority\ vote}[\{\hat{C}_b(x)\}_{b=1}^{B}])
 
 Where:
 
-- \(T_b(x)\) is the prediction of the \(b\)-th tree for regression,
-- \(\hat{C}_b(x)\) is the predicted class of the \(b\)-th tree,
-- \(B\) is the number of trees.
+- T_b(x) is the prediction of the b-th tree for regression,
+- hat{C}_b(x) is the predicted class of the \(b\)-th tree,
+- B is the number of trees.
 
 Typical choices for the number of features considered at each split:
 
-- Regression (classical recommendation): \(m = \frac{p}{3}\)  
-- Regression (scikit-learn default): \(m = p\)  
-- Classification: \(m = \sqrt{p}\)  
+- Regression (classical recommendation): m = p/3 
+- Regression (scikit-learn default): m = p  
+- Classification: m =sqrt(p)
 
-where \(p\) is the total number of features.
+where p is the total number of features.
 
 Trees can be made even more random by selecting split thresholds at random instead of optimizing them. This approach is known as the **Extremely Randomized Trees (ExtraTrees)** ensemble.
 
