@@ -65,11 +65,11 @@ Random Forest is a specialized and optimized form of bagging based on decision t
 
 For regression:
 
-![Random Forest prediction](https://latex.codecogs.com/svg.image?\color{white}\hat{f}_{rf}^{B}(x)%20=%20\frac{1}{B}%20%5Csum_{b=1}^{B}T_b(x)
+![Random Forest prediction](https://latex.codecogs.com/svg.image?\color{white}\hat{f}_{rf}^{B}(x)%20=%20\frac{1}{B}%20%5Csum_{b=1}^{B}T_b(x))
 
 For classification:
 
-![Random Forest classification](https://latex.codecogs.com/svg.image?\color{white}\hat{C}_{rf}^{B}(x)%20=%20\text{majority\ vote}[\{\hat{C}_b(x)\}_{b=1}^{B}])
+![Random Forest classification](https://latex.codecogs.com/svg.image?\color{white}\hat{C}_{rf}^{B}(x)%20=%20\text{majority%20vote}[%5C{\hat{C}_b(x)%5C}_{b=1}^{B}])
 
 Where:
 
