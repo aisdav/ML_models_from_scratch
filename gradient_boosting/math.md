@@ -14,7 +14,7 @@ The algorithm is structured as follows:
   7) The resulting sum is the final prediction.
 
 ## Formulas for calculation
-![Loss function](https://latex.codecogs.com/svg.image?\color{white}L%28y_i%2C%20F%28x_i%29%29%20%3D%20%5Cfrac%7B1%7D%7B2%7D%28y_i-F%28x_i%29%29%5E2)
+![Loss function](https://latex.codecogs.com/svg.image?\color{white}L%28y_i%2CF%28x_i%29%29%3D%5Cfrac%7B1%7D%7B2%7D%28y_i-F%28x_i%29%29%5E2)
 
 ![Residuals](https://latex.codecogs.com/svg.image?\color{white}r_%7Bik%7D%20=%20-%20%5Cleft%5B%20%5Cfrac%7B%5Cpartial%20L(y_i,%20F(x_i))%7D%7B%5Cpartial%20F(x_i)%7D%20%5Cright%5D_%7BF(x)=F_%7Bm-1%7D(x)%7D%20=%20y_i%20-%20F_%7Bm-1%7D(x_i))
 
